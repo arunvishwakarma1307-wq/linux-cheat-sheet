@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Cheat Sheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🐧 Linux Commands Cheat Sheet</h1>
+        <p class="subtitle">Useful Linux commands for beginners</p>
+
+        <input type="text" id="searchInput" placeholder="Search command...">
+
+        <p id="noResults" style="display:none;">
+            ❌ No command found
+        </p>
+
+        <div class="card">
+            <h2>File & Directory Commands</h2>
+
+            <p class="command"><strong>pwd</strong> - Show current directory</p>
+            <p class="command"><strong>ls</strong> - List files and folders</p>
+            <p class="command"><strong>cd</strong> - Change directory</p>
+            <p class="command"><strong>mkdir</strong> - Create a new folder</p>
+            <p class="command"><strong>rm</strong> - Delete files</p>
+            <p class="command"><strong>cp</strong> - Copy files</p>
+            <p class="command"><strong>mv</strong> - Move or rename files</p>
+            <p class="command"><strong>touch</strong> - Create a new file</p>
+            <p class="command"><strong>cat</strong> - Display file content</p>
+            <p class="command"><strong>head</strong> - Show first lines of a file</p>
+            <p class="command"><strong>tail</strong> - Show last lines of a file</p>
+            <p class="command"><strong>grep</strong> - Search text in files</p>
+            <p class="command"><strong>find</strong> - Find files and folders</p>
+        </div>
+
+        <div class="card">
+            <h2>User Commands</h2>
+
+            <p class="command"><strong>whoami</strong> - Show current user</p>
+            <p class="command"><strong>passwd</strong> - Change password</p>
+            <p class="command"><strong>id</strong> - Show user ID</p>
+            <p class="command"><strong>sudo</strong> - Run command as administrator</p>
+            <p class="command"><strong>su</strong> - Switch user</p>
+            <p class="command"><strong>groups</strong> - Show user groups</p>
+        </div>
+
+        <div class="card">
+            <h2>Network Commands</h2>
+
+            <p class="command"><strong>ping</strong> - Test network connection</p>
+            <p class="command"><strong>ip a</strong> - Show IP address</p>
+            <p class="command"><strong>curl</strong> - Fetch data from URL</p>
+            <p class="command"><strong>wget</strong> - Download files from internet</p>
+            <p class="command"><strong>ssh</strong> - Secure remote login</p>
+            <p class="command"><strong>netstat</strong> - Show network connections</p>
+        </div>
+
+        <div class="card">
+            <h2>Process Commands</h2>
+
+            <p class="command"><strong>ps</strong> - Show running processes</p>
+            <p class="command"><strong>top</strong> - Monitor system processes</p>
+            <p class="command"><strong>kill</strong> - Stop a process</p>
+            <p class="command"><strong>htop</strong> - Interactive process viewer</p>
+        </div>
+
+        <div class="card">
+            <h2>Disk Commands</h2>
+
+            <p class="command"><strong>df -h</strong> - Show disk usage</p>
+            <p class="command"><strong>du -h</strong> - Show folder size</p>
+            <p class="command"><strong>mount</strong> - Mount a filesystem</p>
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const noResults = document.getElementById("noResults");
+
+        searchInput.addEventListener("keyup", function() {
+            const value = searchInput.value.toLowerCase();
+            const commands = document.querySelectorAll(".command");
+
+            let found = false;
+
+            commands.forEach(cmd => {
+                if (cmd.textContent.toLowerCase().includes(value)) {
+                    cmd.style.display = "";
+                    found = true;
+                } else {
+                    cmd.style.display = "none";
+                }
+            });
+
+            if (found) {
+                noResults.style.display = "none";
+            } else {
+                noResults.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+<footer>
+  Created by Arun Vishwakarma
+</footer>
