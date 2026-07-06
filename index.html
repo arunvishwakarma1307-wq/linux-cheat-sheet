@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,13 @@
     <title>Linux Cheat Sheet</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
 
-    
-    <header class="navbar">
+<body>
+
+<div class="container">
+
+<!-- NAVBAR -->
+<header class="navbar">
     <div class="logo">
         🐧 Linux Cheat Sheet
     </div>
@@ -19,134 +21,115 @@
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#commands">Commands</a></li>
-        
-            <li>
-                <a href="https://github.com/arunvishwakarma1307-wq/linux-cheat-sheet"
-                   target="_blank">
-                    GitHub
-                </a>
-            </li>
+            <li><a href="https://github.com/arunvishwakarma1307-wq/linux-cheat-sheet" target="_blank">GitHub</a></li>
         </ul>
     </nav>
 </header>
 
-    <div class="container">
-        <section class="hero">
+<!-- HERO -->
+<section class="hero">
     <h1>🐧 Linux Cheat Sheet</h1>
-    <p class="subtitle">
-        Master Linux Commands Faster 🚀
-    </p>
-
+    <p class="subtitle">Master Linux Commands Faster 🚀</p>
     <p class="hero-text">
-        A modern Linux command reference for beginners,
-        students and future DevOps engineers.
+        A modern Linux command reference for beginners, students and future DevOps engineers.
     </p>
 </section>
 
-        <input type="text" id="searchInput" placeholder="Search command...">
+<!-- SEARCH -->
+<input type="text" id="searchInput" placeholder="Search command...">
+<p id="noResults" style="display:none;">❌ No command found</p>
 
-        <p id="noResults" style="display:none;">
-            ❌ No command found
-        </p>
+<!-- FILE COMMANDS -->
+<div class="card" id="commands">
+    <h2>File & Directory Commands</h2>
 
-        <div class="card" id="commands">
-            <h2>File & Directory Commands</h2>
+    <p class="command"><strong>pwd</strong> - Show current directory <button onclick="copyText('pwd')">Copy</button></p>
+    <p class="command"><strong>ls</strong> - List files and folders <button onclick="copyText('ls')">Copy</button></p>
+    <p class="command"><strong>cd</strong> - Change directory <button onclick="copyText('cd')">Copy</button></p>
+    <p class="command"><strong>mkdir</strong> - Create a new folder <button onclick="copyText('mkdir')">Copy</button></p>
+    <p class="command"><strong>rm</strong> - Delete files <button onclick="copyText('rm')">Copy</button></p>
+    <p class="command"><strong>cp</strong> - Copy files <button onclick="copyText('cp')">Copy</button></p>
+    <p class="command"><strong>mv</strong> - Move or rename files <button onclick="copyText('mv')">Copy</button></p>
+    <p class="command"><strong>touch</strong> - Create file <button onclick="copyText('touch')">Copy</button></p>
+    <p class="command"><strong>cat</strong> - Display file content <button onclick="copyText('cat')">Copy</button></p>
+    <p class="command"><strong>head</strong> - Show first lines <button onclick="copyText('head')">Copy</button></p>
+    <p class="command"><strong>tail</strong> - Show last lines <button onclick="copyText('tail')">Copy</button></p>
+    <p class="command"><strong>grep</strong> - Search text <button onclick="copyText('grep')">Copy</button></p>
+    <p class="command"><strong>find</strong> - Find files <button onclick="copyText('find')">Copy</button></p>
+</div>
 
-            <p class="command"><strong>pwd</strong> - Show current directory</p>
-            <p class="command"><strong>ls</strong> - List files and folders</p>
-            <p class="command"><strong>cd</strong> - Change directory</p>
-            <p class="command"><strong>mkdir</strong> - Create a new folder</p>
-            <p class="command"><strong>rm</strong> - Delete files</p>
-            <p class="command"><strong>cp</strong> - Copy files</p>
-            <p class="command"><strong>mv</strong> - Move or rename files</p>
-            <p class="command"><strong>touch</strong> - Create a new file</p>
-            <p class="command"><strong>cat</strong> - Display file content</p>
-            <p class="command"><strong>head</strong> - Show first lines of a file</p>
-            <p class="command"><strong>tail</strong> - Show last lines of a file</p>
-            <p class="command"><strong>grep</strong> - Search text in files</p>
-            <p class="command"><strong>find</strong> - Find files and folders</p>
-        </div>
+<!-- USER -->
+<div class="card">
+    <h2>User Commands</h2>
+    <p class="command"><strong>whoami</strong> - Current user <button onclick="copyText('whoami')">Copy</button></p>
+    <p class="command"><strong>passwd</strong> - Change password <button onclick="copyText('passwd')">Copy</button></p>
+    <p class="command"><strong>sudo</strong> - Admin access <button onclick="copyText('sudo')">Copy</button></p>
+</div>
 
-        <div class="card">
-            <h2>User Commands</h2>
+<!-- NETWORK -->
+<div class="card">
+    <h2>Network Commands</h2>
+    <p class="command"><strong>ping</strong> - Test connection <button onclick="copyText('ping')">Copy</button></p>
+    <p class="command"><strong>curl</strong> - Fetch URL <button onclick="copyText('curl')">Copy</button></p>
+    <p class="command"><strong>wget</strong> - Download files <button onclick="copyText('wget')">Copy</button></p>
+</div>
 
-            <p class="command"><strong>whoami</strong> - Show current user</p>
-            <p class="command"><strong>passwd</strong> - Change password</p>
-            <p class="command"><strong>id</strong> - Show user ID</p>
-            <p class="command"><strong>sudo</strong> - Run command as administrator</p>
-            <p class="command"><strong>su</strong> - Switch user</p>
-            <p class="command"><strong>groups</strong> - Show user groups</p>
-        </div>
+<!-- PROCESS -->
+<div class="card">
+    <h2>Process Commands</h2>
+    <p class="command"><strong>ps</strong> - Running processes <button onclick="copyText('ps')">Copy</button></p>
+    <p class="command"><strong>top</strong> - System monitor <button onclick="copyText('top')">Copy</button></p>
+    <p class="command"><strong>kill</strong> - Stop process <button onclick="copyText('kill')">Copy</button></p>
+</div>
 
-        <div class="card">
-            <h2>Network Commands</h2>
+<!-- DISK -->
+<div class="card">
+    <h2>Disk Commands</h2>
+    <p class="command"><strong>df -h</strong> - Disk usage <button onclick="copyText('df -h')">Copy</button></p>
+    <p class="command"><strong>du -h</strong> - Folder size <button onclick="copyText('du -h')">Copy</button></p>
+</div>
 
-            <p class="command"><strong>ping</strong> - Test network connection</p>
-            <p class="command"><strong>ip a</strong> - Show IP address</p>
-            <p class="command"><strong>curl</strong> - Fetch data from URL</p>
-            <p class="command"><strong>wget</strong> - Download files from internet</p>
-            <p class="command"><strong>ssh</strong> - Secure remote login</p>
-            <p class="command"><strong>netstat</strong> - Show network connections</p>
-        </div>
-
-        <div class="card">
-            <h2>Process Commands</h2>
-
-            <p class="command"><strong>ps</strong> - Show running processes</p>
-            <p class="command"><strong>top</strong> - Monitor system processes</p>
-            <p class="command"><strong>kill</strong> - Stop a process</p>
-            <p class="command"><strong>htop</strong> - Interactive process viewer</p>
-        </div>
-
-        <div class="card">
-            <h2>Disk Commands</h2>
-
-            <p class="command"><strong>df -h</strong> - Show disk usage</p>
-            <p class="command"><strong>du -h</strong> - Show folder size</p>
-            <p class="command"><strong>mount</strong> - Mount a filesystem</p>
-        </div>
-    </div>
-
-    <script>
-        const searchInput = document.getElementById("searchInput");
-        const noResults = document.getElementById("noResults");
-
-        searchInput.addEventListener("keyup", function() {
-            const value = searchInput.value.toLowerCase();
-            const commands = document.querySelectorAll(".command");
-
-            let found = false;
-
-            commands.forEach(cmd => {
-                if (cmd.textContent.toLowerCase().includes(value)) {
-                    cmd.style.display = "";
-                    found = true;
-                } else {
-                    cmd.style.display = "none";
-                }
-            });
-
-            if (found) {
-                noResults.style.display = "none";
-            } else {
-                noResults.style.display = "block";
-            }
-        });
-    </script>
-    
-
-
+<!-- FOOTER -->
 <footer>
-    <p class="creator">
-        ✨ Created by Arun Vishwakarma ✨
-    </p>
-    <p class="tagline">
-        Linux Learner • Cloud Engineer • Future DevOps Engineer 🚀
-    <p style="display:none;">Last Updated: 2026-06-28</p>
-    <div class="social-links">
-        <a href="https://github.com/arunvishwakarma1307-wq" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+    <p>✨ Created by Arun Vishwakarma ✨</p>
+    <p>Linux Learner • Cloud Engineer • DevOps Engineer 🚀</p>
+
+    <div>
+        <a href="https://github.com/arunvishwakarma1307-wq">GitHub</a> |
+        <a href="https://www.linkedin.com/">LinkedIn</a>
     </div>
 </footer>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function copyText(text) {
+    navigator.clipboard.writeText(text);
+    alert("Copied: " + text);
+}
+
+const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults");
+
+searchInput.addEventListener("keyup", function () {
+    const value = searchInput.value.toLowerCase();
+    const commands = document.querySelectorAll(".command");
+
+    let found = false;
+
+    commands.forEach(cmd => {
+        if (cmd.textContent.toLowerCase().includes(value)) {
+            cmd.style.display = "";
+            found = true;
+        } else {
+            cmd.style.display = "none";
+        }
+    });
+
+    noResults.style.display = found ? "none" : "block";
+});
+</script>
+
 </body>
 </html>
