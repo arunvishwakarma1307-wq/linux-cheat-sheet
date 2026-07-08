@@ -21,7 +21,8 @@ A modern Linux command reference for beginners, students and future DevOps engin
 
 ## 📸 Preview
 
-![Linux Cheat Sheet](images/linux-cheat-sheet-home.png)
+
+![Linux Cheat Sheet Preview](Screenshots/linux-cheat-sheet-home.png)
 
 ---
 
