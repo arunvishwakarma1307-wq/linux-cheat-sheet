@@ -41,7 +41,7 @@ A modern Linux command reference for beginners, students and future DevOps engin
 **Arun Vishwakarma**
 
 - GitHub: https://github.com/arunvishwakarma1307-wq
-- LinkedIn: https://www.linkedin.com/
+- LinkedIn: https://www.linkedin.com/in/arun-vishwakarma-9a25543b3
 
 ---
 
