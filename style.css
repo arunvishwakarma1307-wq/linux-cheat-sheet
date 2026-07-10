@@ -76,6 +76,8 @@ input {
     margin: 8px 0;
     background: #111827;
     border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
 }
 
 .command strong {
@@ -97,3 +99,22 @@ footer {
 footer {
     padding-bottom: 20px;
 }
+
+.command {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-style: preserve-3d;
+}
+.command button {
+    position: relative;
+    z-index: 10;
+}
+
+.command {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+}
+
+
