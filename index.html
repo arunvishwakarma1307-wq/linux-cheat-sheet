@@ -22,6 +22,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#commands">Commands</a></li>
             <li><a href="https://github.com/arunvishwakarma1307-wq/linux-cheat-sheet" target="_blank">GitHub</a></li>
+            <button id="themeBtn">🌙</button>
         </ul>
     </nav>
 </header>
@@ -87,6 +88,30 @@
     <h2>Disk Commands</h2>
     <p class="command"><strong>df -h</strong> - Disk usage <button onclick="copyText('df -h')">Copy</button></p>
     <p class="command"><strong>du -h</strong> - Folder size <button onclick="copyText('du -h')">Copy</button></p>
+</div>
+
+<!-- SYSTEM COMMANDS -->
+<div class="card">
+    <h2>System Commands</h2>
+
+    <p class="command"><strong>uname -a</strong> - Show system information 
+    <button onclick="copyText('uname -a')">Copy</button></p>
+
+    <p class="command"><strong>hostname</strong> - Show system hostname 
+    <button onclick="copyText('hostname')">Copy</button></p>
+
+    <p class="command"><strong>uptime</strong> - Show system running time 
+    <button onclick="copyText('uptime')">Copy</button></p>
+
+    <p class="command"><strong>date</strong> - Show current date and time 
+    <button onclick="copyText('date')">Copy</button></p>
+
+    <p class="command"><strong>history</strong> - Show command history 
+    <button onclick="copyText('history')">Copy</button></p>
+
+    <p class="command"><strong>clear</strong> - Clear terminal screen 
+    <button onclick="copyText('clear')">Copy</button></p>
+
 </div>
 
 <!-- FOOTER -->
@@ -164,7 +189,30 @@ document.querySelectorAll(".command, .card").forEach(card => {
     });
 
 });
+
+// Theme Toggle
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        themeBtn.innerHTML = "🌙";
+    }
+    else{
+        themeBtn.innerHTML = "☀️";
+    }
+
+});
 </script>
+
+<div id="toast">Copied!</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

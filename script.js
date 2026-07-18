@@ -17,13 +17,17 @@ searchInput.addEventListener("keyup", function () {
 
 // COPY FUNCTION
 function copyText(text) {
+
     navigator.clipboard.writeText(text);
 
+    const toast = document.getElementById("toast");
+
     toast.style.display = "block";
+    toast.innerHTML = "✓ Copied: " + text;
 
     setTimeout(() => {
         toast.style.display = "none";
-    }, 1500);
+    }, 2000);
 }
 
 // 3D Card Effect
@@ -64,5 +68,28 @@ document.querySelectorAll(".command").forEach(card => {
         "perspective(800px) rotateX(0) rotateY(0) translateY(0)";
 
     });
+
+});
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        themeBtn.innerHTML = "🌙";
+    }
+    else{
+        themeBtn.innerHTML = "☀️";
+    }
+
+});
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("light-mode");
 
 });

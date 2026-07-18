@@ -117,4 +117,101 @@ footer {
     overflow: hidden;
 }
 
+/* Mobile Responsive */
 
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .command {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .command button {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+#toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #22c55e;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: none;
+    font-weight: bold;
+}
+
+.command {
+    background: #0f172a;
+    border: 1px solid #334155;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.command:hover {
+    box-shadow: 0 15px 30px rgba(56,189,248,0.25);
+}
+
+.command strong {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#themeBtn {
+    background: #38bdf8;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Light Mode */
+
+.light-mode {
+    background: #f8fafc;
+    color: #111827;
+}
+
+.light-mode .card {
+    background: white;
+    color: #111827;
+}
+
+.light-mode .command {
+    background: #e2e8f0;
+}
+
+.light-mode .navbar {
+    background: white;
+}
+
+.light-mode .navbar a {
+    color: #111827;
+}
