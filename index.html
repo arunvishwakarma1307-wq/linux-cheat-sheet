@@ -29,11 +29,39 @@
 
 <!-- HERO -->
 <section class="hero">
+
     <h1>🐧 Linux Cheat Sheet</h1>
-    <p class="subtitle">Master Linux Commands Faster 🚀</p>
+
+    <h2>
+        Learn Linux Commands<br>
+        Like a DevOps Engineer 🚀
+    </h2>
+
     <p class="hero-text">
-        A modern Linux command reference for beginners, students and future DevOps engineers.
+        A modern Linux command reference for beginners,
+        students and future cloud engineers.
     </p>
+
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h2>50+</h2>
+            <p>Linux Commands</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>5+</h2>
+            <p>Categories</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>100%</h2>
+            <p>Free Reference</p>
+        </div>
+
+    </div>
+
 </section>
 
 <!-- SEARCH -->
@@ -158,37 +186,24 @@ searchInput.addEventListener("keyup", function () {
 });
 // 3D Card Effect
 
-document.querySelectorAll(".command, .card").forEach(card => {
+document.querySelectorAll(".command").forEach(card => {
 
-    card.addEventListener("mousemove", (e) => {
+    card.addEventListener("mouseenter", () => {
 
-        const rect = card.getBoundingClientRect();
+        card.style.transform = "translateY(-8px)";
 
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = ((y - centerY) / centerY) * -5;
-        const rotateY = ((x - centerX) / centerX) * 5;
-
-        card.style.transform =
-        `perspective(800px)
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)
-        translateY(-8px)`;
     });
 
 
     card.addEventListener("mouseleave", () => {
 
-        card.style.transform =
-        "perspective(800px) rotateX(0) rotateY(0) translateY(0)";
+        card.style.transform = "translateY(0)";
 
     });
 
 });
+
+
 
 // Theme Toggle
 
@@ -216,3 +231,4 @@ themeBtn.addEventListener("click", () => {
 
 </body>
 </html>
+
