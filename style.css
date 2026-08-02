@@ -137,26 +137,27 @@ input {
 
 #toast {
 
-    position:fixed;
+    position: fixed;
 
-    bottom:30px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    right:30px;
+    background: #22c55e;
 
-    background:#22c55e;
+    color: white;
 
-    color:white;
+    padding: 12px 20px;
 
-    padding:12px 20px;
+    border-radius: 8px;
 
-    border-radius:8px;
+    display: none;
 
-    display:none;
+    font-weight: bold;
 
-    font-weight:bold;
+    z-index: 9999;
 
 }
-
 
 /* Footer */
 

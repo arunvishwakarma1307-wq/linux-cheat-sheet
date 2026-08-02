@@ -1,99 +1,157 @@
+console.log(COMMANDS);
+
+alert(COMMANDS.length);
+
 const searchInput = document.getElementById("searchInput");
-const cmds = document.querySelectorAll(".command");
+const container = document.getElementById("commands");
 const noResults = document.getElementById("noResults");
 const toast = document.getElementById("toast");
-const searchResults = document.getElementById("searchResults");
 
 
-// SEARCH FUNCTION
+const ICONS = {
+    "File & Directory": "📁",
+    "User": "👤",
+    "User Commands": "👤",
+    "Network": "🌐",
+    "Network Commands": "🌐",
+    "Process": "⚙️",
+    "Process Commands": "⚙️",
+    "Disk": "💾",
+    "Disk Commands": "💾",
+    "Git": "🌿",
+    "Git Commands": "🌿",
+    "Docker": "🐳",
+    "Docker Commands": "🐳",
+    "Kubernetes": "☸️",
+    "Kubernetes Commands": "☸️",
+    "DevOps Tools": "🛠️",
+    "DevOps Tools Commands": "🛠️",
+    "Terraform": "☁️",
+    "Terraform Commands": "☁️",
+    "Ansible": "🤖",
+    "Ansible Commands": "🤖",
+    "Jenkins": "🚀",
+    "Jenkins Commands": "🚀",
+    "Maven": "📦",
+    "Maven Commands": "📦",
+    "Gradle": "🏗️",
+    "Gradle Commands": "🏗️",
+    "Helm": "⛵",
+    "Helm Commands": "⛵",
+    "Prometheus": "📊",
+    "Prometheus Commands": "📊",
+    "Grafana": "📈",
+    "Grafana Commands": "📈"
+};
 
-searchInput.addEventListener("input", function () {
 
-    const value = this.value.toLowerCase().trim();
+function render(keyword = "") {
 
-    searchResults.innerHTML = "";
+    container.innerHTML = "";
 
-    if (value === "") {
+    let filtered = COMMANDS.filter(item => {
 
-        noResults.style.display = "none";
+        const text =
+            (item.command + " " + item.what + " " + item.when + " " + item.category)
+            .toLowerCase();
 
-        cmds.forEach(cmd => {
-            cmd.style.display = "flex";
-        });
+        return text.includes(keyword.toLowerCase());
 
+    });
+
+    if (filtered.length === 0) {
+
+        noResults.style.display = "block";
         return;
 
     }
 
-    let found = false;
+    noResults.style.display = "none";
 
-    cmds.forEach(cmd => {
+    let groups = {};
 
-        if (cmd.innerText.toLowerCase().includes(value)) {
+    filtered.forEach(item => {
 
-            found = true;
+        if (!groups[item.category]) groups[item.category] = [];
 
-            const clone = cmd.cloneNode(true);
-
-            searchResults.appendChild(clone);
-
-        }
+        groups[item.category].push(item);
 
     });
 
-    if (found) {
+    for (let category in groups) {
 
-        noResults.style.display = "none";
+        const card = document.createElement("div");
+        card.className = "card";
 
-    } else {
+        card.innerHTML = `<h2>${ICONS[category] || "📚"} ${category} Commands</h2>`;
 
-        noResults.style.display = "block";
+        groups[category].forEach(cmd => {
+
+            card.innerHTML += `
+            <div class="command">
+                <div>
+                    <strong>${cmd.command}</strong>
+
+                    <p>
+                        <span class="command-title">📖 What it does</span><br>
+                        ${cmd.what}
+                    </p>
+
+                    <p>
+                        <span class="command-title">💡 When to use</span><br>
+                        ${cmd.when}
+                    </p>
+
+                    <p>
+                        <span class="command-title">💻 Example</span><br>
+                        <code>${cmd.example}</code>
+                    </p>
+
+                </div>
+
+                <button onclick="copyText('${cmd.command}')">
+                    Copy
+                </button>
+            </div>
+            `;
+
+        });
+
+        container.appendChild(card);
 
     }
-
-});
-
-
-
-// =====================
-// COPY FUNCTION
-// =====================
-
-function copyText(text) {
-
-    navigator.clipboard.writeText(text);
-
-    toast.style.display = "block";
-    toast.innerHTML = "✓ Copied: " + text;
-
-    setTimeout(() => {
-
-        toast.style.display = "none";
-
-    }, 2000);
 
 }
 
+searchInput.addEventListener("input", e => {
 
+    render(e.target.value);
 
-// =====================
-// THEME TOGGLE
-// =====================
+});
 
-const themeBtn = document.getElementById("themeBtn");
+render();
 
-themeBtn.addEventListener("click", () => {
+function copyText(text){
+
+    navigator.clipboard.writeText(text);
+
+    toast.style.display="block";
+    toast.innerHTML="✓ Copied: "+text;
+
+    setTimeout(()=>{
+
+        toast.style.display="none";
+
+    },2000);
+
+}
+
+const themeBtn=document.getElementById("themeBtn");
+
+themeBtn.onclick=()=>{
 
     document.body.classList.toggle("light-mode");
 
-    if (document.body.classList.contains("light-mode")) {
+    themeBtn.innerHTML=document.body.classList.contains("light-mode")?"🌙":"☀️";
 
-        themeBtn.innerHTML = "🌙";
-
-    } else {
-
-        themeBtn.innerHTML = "☀️";
-
-    }
-
-});
+};
