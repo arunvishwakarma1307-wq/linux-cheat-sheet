@@ -69,16 +69,28 @@ input {
 
 }
 
+/* 3 Cards Per Row */
+.command-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:20px;
+}
+
 /* Commands */
 
 .command {
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
     gap: 20px;
 
     padding: 10px 15px;
+
     margin: 8px 0;
 
     background: #0f172a;
@@ -129,6 +141,11 @@ input {
     position:relative;
 
     z-index:10;
+
+    margin-top:auto;
+
+    width:100%;
+
 
 }
 
