@@ -83,39 +83,47 @@ function render(keyword = "") {
         const card = document.createElement("div");
         card.className = "card";
 
-        card.innerHTML = `<h2>${ICONS[category] || "📚"} ${category} Commands</h2>`;
+        card.innerHTML = `
+        <h2>${ICONS[category] || "📚"} ${category} Commands</h2>
+        <div class="command-grid">
+        </div>
+`;
 
-        groups[category].forEach(cmd => {
+        const grid = card.querySelector(".command-grid");
 
-            card.innerHTML += `
-            <div class="command">
-                <div>
-                    <strong>${cmd.command}</strong>
+groups[category].forEach(cmd => {
 
-                    <p>
-                        <span class="command-title">📖 What it does</span><br>
-                        ${cmd.what}
-                    </p>
+    grid.innerHTML += `
+    <div class="command">
 
-                    <p>
-                        <span class="command-title">💡 When to use</span><br>
-                        ${cmd.when}
-                    </p>
+        <div>
+            <strong>${cmd.command}</strong>
 
-                    <p>
-                        <span class="command-title">💻 Example</span><br>
-                        <code>${cmd.example}</code>
-                    </p>
+            <p>
+                <span class="command-title">📖 What it does</span><br>
+                ${cmd.what}
+            </p>
 
-                </div>
+            <p>
+                <span class="command-title">💡 When to use</span><br>
+                ${cmd.when}
+            </p>
 
-                <button onclick="copyText('${cmd.command}')">
-                    Copy
-                </button>
-            </div>
-            `;
+            <p>
+                <span class="command-title">💻 Example</span><br>
+                <code>${cmd.example}</code>
+            </p>
 
-        });
+        </div>
+
+        <button onclick="copyText('${cmd.command}')">
+            Copy
+        </button>
+
+    </div>
+    `;
+
+});
 
         container.appendChild(card);
 

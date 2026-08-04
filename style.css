@@ -50,6 +50,7 @@ input {
 .card {
     background: #1e293b;
     padding: 20px;
+    height:100%;
     border-radius: 10px;
     margin-bottom: 20px;
     position: relative;
