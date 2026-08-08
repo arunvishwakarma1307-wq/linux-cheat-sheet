@@ -44,6 +44,27 @@ const ICONS = {
     "Grafana Commands": "📈"
 };
 
+function renderSidebar() {
+    const categoryList = document.getElementById("categoryList");
+
+    categoryList.innerHTML = "";
+
+    const categories = [...new Set(COMMANDS.map(item => item.category))];
+
+    categories.forEach(category => {
+
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            <a href="#${category.toLowerCase().replace(/\s+/g, "-")}">
+                ${ICONS[category] || "📁"} ${category}
+            </a>
+        `;
+
+        categoryList.appendChild(li);
+    });
+}
+
 
 function render(keyword = "") {
 
@@ -82,6 +103,7 @@ function render(keyword = "") {
 
         const card = document.createElement("div");
         card.className = "card";
+        card.id = category.toLowerCase().replace(/\s+/g, "-");
 
         card.innerHTML = `
         <h2>${ICONS[category] || "📚"} ${category} Commands</h2>
@@ -137,6 +159,7 @@ searchInput.addEventListener("input", e => {
 
 });
 
+renderSidebar();
 render();
 
 function copyText(text){
@@ -162,4 +185,20 @@ themeBtn.onclick=()=>{
 
     themeBtn.innerHTML=document.body.classList.contains("light-mode")?"🌙":"☀️";
 
+};
+
+const homeBtn = document.getElementById("homeBtn");
+
+homeBtn.onclick = (e) => {
+    e.preventDefault();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    document.querySelector(".sidebar").scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 };
