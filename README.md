@@ -26,21 +26,22 @@ Designed for **students, beginners, and self-learners** who want to learn Linux 
 
 # 🚀 Features
 
-- 📚 210+ Practical Commands
-- 📂 16 Organized Categories
-- 🔍 Live Command Search
-- 📋 One-click Copy Button
-- 🌙 Dark / Light Theme
-- 📱 Fully Responsive Design
-- 🎨 Modern Interactive UI
+* 📚 210+ Practical Commands
+* 📂 16 Organized Categories
+* 🔍 Live Command Search
+* 📋 One-click Copy Button
+* 🌙 Dark / Light Theme
+* 🏠 Quick Home Navigation
+* 📱 Fully Responsive Design
+* 🎨 Modern Interactive UI
 
 ---
 
 # 🛠 Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
 
 ---
 
@@ -72,34 +73,39 @@ git clone https://github.com/arunvishwakarma1307-wq/linux-cheat-sheet.git
 
 You can either:
 
-- Open **index.html** directly in your browser.
+* Open `index.html` directly in your browser.
 
 **OR**
 
-- Open the project in **Visual Studio Code** and run it using the **Live Server** extension.
+* Open the project in **Visual Studio Code** and run it using the **Live Server** extension.
 
 ---
 
 # 🎯 Purpose
 
-This project was created to help beginners learn the most commonly used Linux and DevOps commands through a clean and easy-to-use interface.
+This project was created to help beginners learn commonly used Linux and DevOps commands through a clean and easy-to-use interface.
 
-Instead of searching commands across multiple websites, users can quickly search, understand, and copy commands with practical examples.
-
-This project also serves as a portfolio project demonstrating Linux, DevOps, and front-end development skills.
+It also serves as a beginner portfolio project demonstrating Linux, DevOps, Git, and front-end development skills.
 
 ---
 
-# 🚀 Future Improvements
+# 📌 Project Status
 
-- ⭐ Favorite Commands
-- 📂 Filter Commands by Category
-- 🔥 Advanced Search
-- 📄 Export as PDF
-- 📱 Better Mobile Experience
-- 🌐 Offline Support (PWA)
-- 🧠 DevOps Learning Roadmap
-- 🎥 Learning Resources
+**Completed — Beginner Version ✅**
+
+The current beginner version of this project is **stopped here for now**.
+
+Future commands, categories, UI improvements, or other features can be added later if required.
+
+---
+
+# 🔮 Possible Future Improvements
+
+* ⭐ Favorite Commands
+* 📄 Export as PDF
+* 📱 Better Mobile Experience
+* 🌐 Offline Support (PWA)
+* 🧠 DevOps Learning Roadmap
 
 ---
 
@@ -107,8 +113,8 @@ This project also serves as a portfolio project demonstrating Linux, DevOps, and
 
 ## Arun Vishwakarma
 
-- **GitHub:** https://github.com/arunvishwakarma1307-wq
-- **LinkedIn:** https://www.linkedin.com/in/arun-vishwakarma-9a25543b3
+* **GitHub:** https://github.com/arunvishwakarma1307-wq
+* **LinkedIn:** https://www.linkedin.com/in/arun-vishwakarma-9a25543b3
 
 ---
 
